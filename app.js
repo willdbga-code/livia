@@ -48,7 +48,7 @@ function initCustomCursor() {
   requestAnimationFrame(renderCursor);
 
   // Hover targets
-  const interactiveTargets = document.querySelectorAll('a, button, .setup-card, .model-btn, .light-btn, .check-item, #scrollHandCanvas, #heroDiamondCanvas');
+  const interactiveTargets = document.querySelectorAll('a, button, .setup-card, .model-btn, .light-btn, .check-item, #scrollHandCanvas');
   interactiveTargets.forEach(el => {
     el.addEventListener('mouseenter', () => {
       ring.classList.add('active');

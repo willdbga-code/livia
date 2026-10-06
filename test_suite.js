@@ -100,9 +100,9 @@ server.listen(PORT, '127.0.0.1', () => {
         const domTest = await send('Runtime.evaluate', {
           expression: `({
             title: document.title,
-            heroCanvas: !!document.getElementById('heroDiamondCanvas'),
+            heroDiamondRemoved: !document.getElementById('heroDiamondCanvas'),
             scrollHandCanvas: !!document.getElementById('scrollHandCanvas'),
-            stage3dRemoved: !document.getElementById('stage3d'),
+            nonNominativeScrollBadge: document.querySelector('.scroll-hand-badge')?.textContent === '[ SCROLL DOWN ]',
             cardsCount: document.querySelectorAll('.setup-card').length,
             checklistCount: document.querySelectorAll('.check-item').length
           })`,
@@ -113,12 +113,10 @@ server.listen(PORT, '127.0.0.1', () => {
         // Wait 3.5 seconds for 3D engine and textures to initialize
         await new Promise(r => setTimeout(r, 3500));
 
-        // Test 3D Scroll Hand Canvas and Hero Diamond Canvas
-        console.log('--- Testing 3D Canvases ---');
+        // Test 3D Scroll Hand Canvas
+        console.log('--- Testing 3D Scroll Hand Canvas ---');
         const canvasTest = await send('Runtime.evaluate', {
           expression: `({
-            heroWidth: document.getElementById('heroDiamondCanvas')?.width,
-            heroHeight: document.getElementById('heroDiamondCanvas')?.height,
             scrollHandWidth: document.getElementById('scrollHandCanvas')?.width,
             scrollHandHeight: document.getElementById('scrollHandCanvas')?.height,
             scrollInviteHref: document.querySelector('.scroll-hand-link')?.getAttribute('href')

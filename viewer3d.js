@@ -1,19 +1,16 @@
 /**
  * LÍVIA BARBOSA • THE GROOVY HIP-HOP SHOOT
  * Three.js 3D Viewport Controller:
- * 01. Hero Lil Uzi Diamond (Floating 3D Bling)
- * 02. Interactive 3D Chrome Hand Scroll Guide (Pointing Downward)
+ * Interactive 3D Chrome Hand Scroll Guide (Pointing Downward)
  */
 
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
 /* ==========================================================================
    INITIALIZATION
    ========================================================================== */
 function initAll() {
-  initHeroDiamond();
   initScrollHand();
 }
 
@@ -24,132 +21,7 @@ if (document.readyState === 'loading') {
 }
 
 /* ==========================================================================
-   01. HERO SECTION: FLOATING LIL UZI DIAMOND (Z-INDEX: 2 FULL-BLEED)
-   ========================================================================== */
-function initHeroDiamond() {
-  const canvas = document.getElementById('heroDiamondCanvas');
-  const container = document.getElementById('heroDiamondWrapper');
-  if (!canvas || !container) return;
-
-  const scene = new THREE.Scene();
-  
-  const width = container.clientWidth || 400;
-  const height = container.clientHeight || 420;
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-  camera.position.set(0, 0, 4.2);
-
-  const renderer = new THREE.WebGLRenderer({
-    canvas,
-    antialias: true,
-    alpha: true
-  });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.3;
-
-  // Orbit controls for hero diamond
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-  controls.enableZoom = true;
-  controls.minDistance = 2.2;
-  controls.maxDistance = 6.0;
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 2.0;
-
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-  scene.add(ambientLight);
-
-  const dirLight1 = new THREE.DirectionalLight(0xd4af37, 2.5); // Warm Gold
-  dirLight1.position.set(4, 5, 3);
-  scene.add(dirLight1);
-
-  const dirLight2 = new THREE.DirectionalLight(0xe2e8f0, 2.0); // Silver rim
-  dirLight2.position.set(-4, -2, -3);
-  scene.add(dirLight2);
-
-  const pointLight = new THREE.PointLight(0xfff1b8, 2.0, 10);
-  pointLight.position.set(0, 1, 2);
-  scene.add(pointLight);
-
-  // Diamond Mesh Group
-  const diamondGroup = new THREE.Group();
-  scene.add(diamondGroup);
-
-  // Build Hero Diamond Geometry
-  const diamondMesh = createProceduralDiamond(0xd4af37);
-  diamondGroup.add(diamondMesh);
-
-  // Floating Golden Sparkles Particles
-  const particleGeo = new THREE.BufferGeometry();
-  const particleCount = 45;
-  const posArray = new Float32Array(particleCount * 3);
-  for (let i = 0; i < particleCount * 3; i += 3) {
-    posArray[i] = (Math.random() - 0.5) * 5;
-    posArray[i + 1] = (Math.random() - 0.5) * 5;
-    posArray[i + 2] = (Math.random() - 0.5) * 5;
-  }
-  particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-  const particleMat = new THREE.PointsMaterial({
-    size: 0.04,
-    color: 0xf7e7a9,
-    transparent: true,
-    opacity: 0.75,
-    blending: THREE.AdditiveBlending
-  });
-  const particleSystem = new THREE.Points(particleGeo, particleMat);
-  scene.add(particleSystem);
-
-  // Mouse Parallax
-  let mouseNormX = 0;
-  let mouseNormY = 0;
-  window.addEventListener('mousemove', (e) => {
-    mouseNormX = (e.clientX / window.innerWidth) * 2 - 1;
-    mouseNormY = -(e.clientY / window.innerHeight) * 2 + 1;
-  });
-
-  // Animation Loop
-  let clock = new THREE.Clock();
-  function animate() {
-    requestAnimationFrame(animate);
-    const elapsedTime = clock.getElapsedTime();
-
-    controls.update();
-
-    // Floating bobbing motion
-    diamondGroup.position.y = Math.sin(elapsedTime * 1.5) * 0.12;
-
-    // Slight parallax bias
-    diamondGroup.rotation.x = Math.sin(elapsedTime * 0.5) * 0.1 + mouseNormY * 0.15;
-    diamondGroup.rotation.z = Math.cos(elapsedTime * 0.6) * 0.1 + mouseNormX * 0.15;
-
-    // Particles slow spin
-    particleSystem.rotation.y = elapsedTime * 0.05;
-
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  // Responsive Resize Handling with ResizeObserver
-  function onResize() {
-    const newW = container.clientWidth || 320;
-    const newH = container.clientHeight || 320;
-    camera.aspect = newW / newH;
-    camera.updateProjectionMatrix();
-    renderer.setSize(newW, newH, false);
-  }
-
-  ['resize', 'orientationchange'].forEach(evt => window.addEventListener(evt, onResize));
-  if (window.ResizeObserver) {
-    const ro = new ResizeObserver(() => onResize());
-    ro.observe(container);
-  }
-}
-
-/* ==========================================================================
-   02. SCROLL INVITE: INTERACTIVE 3D CHROME HAND (POINTING DOWNWARD)
+   SCROLL INVITE: INTERACTIVE 3D CHROME HAND (POINTING DOWNWARD)
    ========================================================================== */
 function initScrollHand() {
   const canvas = document.getElementById('scrollHandCanvas');
@@ -354,74 +226,8 @@ function initScrollHand() {
 }
 
 /* ==========================================================================
-   03. PROCEDURAL GEOMETRY HELPERS
+   PROCEDURAL GEOMETRY: SCULPTED CHROME HAND
    ========================================================================== */
-
-// 1. Procedural Lil Uzi Brilliant Cut Diamond
-function createProceduralDiamond(colorHex = 0xd4af37) {
-  const diamondGroup = new THREE.Group();
-
-  // Crown (Top cone frustum)
-  const crownGeo = new THREE.CylinderGeometry(0.85, 1.35, 0.45, 8, 1, false);
-  const diamondMat = new THREE.MeshPhysicalMaterial({
-    color: colorHex,
-    metalness: 0.2,
-    roughness: 0.04,
-    transmission: 0.88,
-    thickness: 1.2,
-    ior: 2.42, // Real diamond refractive index
-    reflectivity: 0.95,
-    clearcoat: 1.0,
-    clearcoatRoughness: 0.02
-  });
-  const crown = new THREE.Mesh(crownGeo, diamondMat);
-  crown.position.y = 0.22;
-  diamondGroup.add(crown);
-
-  // Pavilion (Bottom faceted cone pointing down)
-  const pavilionGeo = new THREE.ConeGeometry(1.35, 1.45, 8, 1, false);
-  const pavilion = new THREE.Mesh(pavilionGeo, diamondMat);
-  pavilion.rotation.x = Math.PI;
-  pavilion.position.y = -0.725;
-  diamondGroup.add(pavilion);
-
-  // Table (Flat top facet)
-  const tableGeo = new THREE.CircleGeometry(0.85, 8);
-  const tableMat = new THREE.MeshPhysicalMaterial({
-    color: 0xffffff,
-    metalness: 0.1,
-    roughness: 0.02,
-    transmission: 0.95,
-    ior: 2.42
-  });
-  const table = new THREE.Mesh(tableGeo, tableMat);
-  table.rotation.x = -Math.PI / 2;
-  table.position.y = 0.45;
-  diamondGroup.add(table);
-
-  // Iced Prongs (Hip-Hop Jewelry Setting)
-  const prongGeo = new THREE.CylinderGeometry(0.04, 0.04, 0.35, 8);
-  const prongMat = new THREE.MeshStandardMaterial({
-    color: 0xd4af37,
-    metalness: 0.98,
-    roughness: 0.08
-  });
-
-  const prongCount = 8;
-  const radius = 1.35;
-  for (let i = 0; i < prongCount; i++) {
-    const angle = (i / prongCount) * Math.PI * 2;
-    const prong = new THREE.Mesh(prongGeo, prongMat);
-    prong.position.set(Math.cos(angle) * radius, 0.02, Math.sin(angle) * radius);
-    prong.rotation.z = (Math.cos(angle) > 0 ? -1 : 1) * 0.15;
-    diamondGroup.add(prong);
-  }
-
-  diamondGroup.scale.set(1.15, 1.15, 1.15);
-  return diamondGroup;
-}
-
-// 2. Procedural Sculpted Hand in Liquid Chrome with Stiletto Claws
 function createProceduralChromeHand(chromeMat, goldMat) {
   const handGroup = new THREE.Group();
 
