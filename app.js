@@ -101,11 +101,12 @@ function initHeaderAndMobileNav() {
   }
 
   // Print Dossier
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
+  const printButtons = [document.getElementById('printDossierBtn'), document.getElementById('mobilePrintDossierBtn')].filter(Boolean);
+  printButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
       window.print();
     });
-  }
+  });
 }
 
 /* ==========================================================================

@@ -132,14 +132,20 @@ function initHeroDiamond() {
   }
   animate();
 
-  // Resize handler
-  window.addEventListener('resize', () => {
-    const newW = container.clientWidth;
-    const newH = container.clientHeight;
+  // Responsive Resize Handling with ResizeObserver
+  function onResize() {
+    const newW = container.clientWidth || 320;
+    const newH = container.clientHeight || 320;
     camera.aspect = newW / newH;
     camera.updateProjectionMatrix();
-    renderer.setSize(newW, newH);
-  });
+    renderer.setSize(newW, newH, false);
+  }
+
+  ['resize', 'orientationchange'].forEach(evt => window.addEventListener(evt, onResize));
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => onResize());
+    ro.observe(container);
+  }
 }
 
 /* ==========================================================================
@@ -331,14 +337,20 @@ function initScrollHand() {
   }
   animate();
 
-  // Resize handler
-  window.addEventListener('resize', () => {
+  // Responsive Resize Handling with ResizeObserver
+  function onHandResize() {
     const w = container.clientWidth || 90;
     const h = container.clientHeight || 120;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-  });
+    renderer.setSize(w, h, false);
+  }
+
+  ['resize', 'orientationchange'].forEach(evt => window.addEventListener(evt, onHandResize));
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => onHandResize());
+    ro.observe(container);
+  }
 }
 
 /* ==========================================================================
