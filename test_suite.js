@@ -101,8 +101,8 @@ server.listen(PORT, '127.0.0.1', () => {
           expression: `({
             title: document.title,
             heroCanvas: !!document.getElementById('heroDiamondCanvas'),
-            stageCanvas: !!document.getElementById('stageCanvas'),
-            hudModel: document.getElementById('hudModelName')?.textContent,
+            scrollHandCanvas: !!document.getElementById('scrollHandCanvas'),
+            stage3dRemoved: !document.getElementById('stage3d'),
             cardsCount: document.querySelectorAll('.setup-card').length,
             checklistCount: document.querySelectorAll('.check-item').length
           })`,
@@ -110,38 +110,22 @@ server.listen(PORT, '127.0.0.1', () => {
         });
         console.log('DOM Test Results:', domTest.result?.value);
 
-        // Wait 3 seconds for 3D engine and textures to initialize
+        // Wait 3.5 seconds for 3D engine and textures to initialize
         await new Promise(r => setTimeout(r, 3500));
 
-        const stageStatus = await send('Runtime.evaluate', {
+        // Test 3D Scroll Hand Canvas and Hero Diamond Canvas
+        console.log('--- Testing 3D Canvases ---');
+        const canvasTest = await send('Runtime.evaluate', {
           expression: `({
-            hudModel: document.getElementById('hudModelName')?.textContent,
-            hudPoly: document.getElementById('hudPolyCount')?.textContent,
-            fps: document.getElementById('hudFps')?.textContent,
-            tapePlaying: document.querySelector('.cassette-deck-card')?.classList.contains('playing')
+            heroWidth: document.getElementById('heroDiamondCanvas')?.width,
+            heroHeight: document.getElementById('heroDiamondCanvas')?.height,
+            scrollHandWidth: document.getElementById('scrollHandCanvas')?.width,
+            scrollHandHeight: document.getElementById('scrollHandCanvas')?.height,
+            scrollInviteHref: document.querySelector('.scroll-hand-link')?.getAttribute('href')
           })`,
           returnByValue: true
         });
-        console.log('Stage Status after 3.5s:', stageStatus.result?.value);
-
-        // Test clicking model buttons
-        console.log('--- Testing Model Buttons ---');
-        const models = ['diamond', 'hand', 'claw', 'polish', 'studio'];
-        for (const m of models) {
-          await send('Runtime.evaluate', {
-            expression: `document.querySelector('.model-btn[data-model="${m}"]')?.click();`
-          });
-          await new Promise(r => setTimeout(r, 800));
-          const modelCheck = await send('Runtime.evaluate', {
-            expression: `({
-              activeBtn: document.querySelector('.model-btn.active')?.dataset.model,
-              hudModel: document.getElementById('hudModelName')?.textContent,
-              hudPoly: document.getElementById('hudPolyCount')?.textContent
-            })`,
-            returnByValue: true
-          });
-          console.log(`Switched to [${m}]:`, modelCheck.result?.value);
-        }
+        console.log('3D Canvases Check:', canvasTest.result?.value);
 
         // Test Tape Deck Play / Pause
         console.log('--- Testing Tape Deck Web Audio ---');

@@ -102,24 +102,14 @@ server.listen(PORT, '127.0.0.1', () => {
         fs.writeFileSync('setups_screenshot.png', Buffer.from(setupsSnap.data, 'base64'));
         console.log('Saved setups_screenshot.png');
 
-        // Scroll to 3D stage
+        // Scroll to and capture close-up of the 3D chrome hand scroll invite
         await send('Runtime.evaluate', {
-          expression: `document.getElementById('stage3d').scrollIntoView();`
+          expression: `document.getElementById('scrollHandContainer')?.scrollIntoView({ block: 'center' });`
         });
-        await new Promise(r => setTimeout(r, 1200));
-
-        const stageSnap = await send('Page.captureScreenshot', { format: 'png' });
-        fs.writeFileSync('stage_screenshot.png', Buffer.from(stageSnap.data, 'base64'));
-        console.log('Saved stage_screenshot.png (size:', fs.statSync('stage_screenshot.png').size, 'bytes)');
-
-        // Scroll to 3D stage controls (Lighting & Shaders)
-        await send('Runtime.evaluate', {
-          expression: `document.querySelector('.stage-controls-bar').scrollIntoView();`
-        });
-        await new Promise(r => setTimeout(r, 1000));
-        const stageControlsSnap = await send('Page.captureScreenshot', { format: 'png' });
-        fs.writeFileSync('stage_controls_screenshot.png', Buffer.from(stageControlsSnap.data, 'base64'));
-        console.log('Saved stage_controls_screenshot.png');
+        await new Promise(r => setTimeout(r, 800));
+        const handSnap = await send('Page.captureScreenshot', { format: 'png' });
+        fs.writeFileSync('hand_scroll_screenshot.png', Buffer.from(handSnap.data, 'base64'));
+        console.log('Saved hand_scroll_screenshot.png');
 
         // Scroll to tape deck
         await send('Runtime.evaluate', {

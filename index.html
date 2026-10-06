@@ -71,9 +71,6 @@
       <nav class="desktop-nav" aria-label="Navegação Principal">
         <a href="#manifesto" class="nav-link">Manifesto</a>
         <a href="#setups" class="nav-link">Os 5 Setups</a>
-        <a href="#stage3d" class="nav-link nav-highlight">
-          <span class="badge-3d">3D</span> Laboratório
-        </a>
         <a href="#poses" class="nav-link">Poses & Câmera</a>
         <a href="#nails" class="nav-link">Nail Bible</a>
         <a href="#styling" class="nav-link">Styling</a>
@@ -108,12 +105,11 @@
       <nav class="mobile-nav">
         <a href="#manifesto" class="mobile-nav-link">01. Manifesto Editorial</a>
         <a href="#setups" class="mobile-nav-link">02. Os 5 Setups Fotográficos</a>
-        <a href="#stage3d" class="mobile-nav-link">03. 3D Stage & Luzes</a>
-        <a href="#poses" class="mobile-nav-link">04. Guia de Poses & Câmera</a>
-        <a href="#nails" class="mobile-nav-link">05. A Bíblia das Unhas</a>
-        <a href="#styling" class="mobile-nav-link">06. Cabelo, Make & Joias</a>
-        <a href="#tape-deck" class="mobile-nav-link">07. Groovy Tape Deck (Beats)</a>
-        <a href="#checklist" class="mobile-nav-link">08. Checklist do Shoot</a>
+        <a href="#poses" class="mobile-nav-link">03. Guia de Poses & Câmera</a>
+        <a href="#nails" class="mobile-nav-link">04. A Bíblia das Unhas</a>
+        <a href="#styling" class="mobile-nav-link">05. Cabelo, Make & Joias</a>
+        <a href="#tape-deck" class="mobile-nav-link">06. Groovy Tape Deck (Beats)</a>
+        <a href="#checklist" class="mobile-nav-link">07. Checklist do Shoot</a>
         <a href="https://www.instagram.com/liviabarbosanails/" target="_blank" rel="noopener" class="mobile-nav-link instagram-highlight">@liviabarbosanails</a>
       </nav>
     </div>
@@ -188,9 +184,9 @@
                 <span>EXPLORAR OS SETUPS</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="#stage3d" class="btn btn-ghost-gold">
+              <a href="#manifesto" class="btn btn-ghost-gold">
                 <span class="dot-3d-pulse"></span>
-                <span>ABRIR 3D STAGE</span>
+                <span>VER O MANIFESTO</span>
               </a>
             </div>
           </div>
@@ -210,11 +206,17 @@
           </div>
         </div>
 
-        <!-- Scroll Invite Bar -->
-        <div class="hero-scroll-invite">
-          <a href="#manifesto" class="scroll-link" aria-label="Rolar para o Manifesto">
-            <span class="scroll-label">DESCUBRA A ALQUIMIA EDITORIAL</span>
-            <span class="scroll-line"></span>
+        <!-- Scroll Invite: Interactive 3D Chrome Hand (Pointing Downward) -->
+        <div class="hero-scroll-invite" id="heroScrollInvite">
+          <a href="#manifesto" class="scroll-hand-link" aria-label="Rolar para o Manifesto Editorial">
+            <div class="scroll-hand-canvas-wrap" id="scrollHandContainer">
+              <canvas id="scrollHandCanvas" aria-label="Mão em Cromo 3D apontando para baixo"></canvas>
+              <div class="hand-glow-pulse" aria-hidden="true"></div>
+            </div>
+            <div class="scroll-hand-text">
+              <span class="scroll-hand-badge">[ MÃO EM CROMO 3D // SCROLL DOWN ]</span>
+              <span class="scroll-hand-label">DESCUBRA A ALQUIMIA EDITORIAL</span>
+            </div>
           </a>
         </div>
       </div>
@@ -634,178 +636,7 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 03: 3D INTERACTIVE STAGE (OPEN SCULPTURE GALLERY INSTALLATION)
-         ==================================================================== -->
-    <section class="stage3d-section" id="stage3d">
-      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
-      <div class="kinetic-watermark wm-stage" aria-hidden="true">THREE.JS • SCULPTURE GALLERY • 3D</div>
-
-      <div class="section-container">
-        
-        <div class="section-lead-header">
-          <div class="stage-tag-badge">
-            <span class="pulse-dot"></span> THREE.JS WEBGL LAB // 03
-          </div>
-          <h2 class="section-title">Laboratório 3D Interativo de Props & Luzes</h2>
-          <p class="section-subtitle">
-            Instalação aberta de galeria: o objeto 3D flutua sem barreiras no espaço. Selecione a escultura e teste a iluminação de estúdio em tempo real.
-          </p>
-        </div>
-
-        <!-- Open Typographic Model Navigation (Gallery Installation Selectors) -->
-        <div class="stage-models-nav" role="tablist" aria-label="Seletor de Esculturas 3D">
-          <button class="model-btn active" data-model="diamond">
-            <span class="m-bracket">[</span>
-            <span class="m-idx">01</span>
-            <span class="m-slash">/</span>
-            <strong class="m-name">THE BLING</strong>
-            <span class="m-bracket">]</span>
-          </button>
-
-          <button class="model-btn" data-model="hand">
-            <span class="m-bracket">[</span>
-            <span class="m-idx">02</span>
-            <span class="m-slash">/</span>
-            <strong class="m-name">THE HAND</strong>
-            <span class="m-bracket">]</span>
-          </button>
-
-          <button class="model-btn" data-model="claw">
-            <span class="m-bracket">[</span>
-            <span class="m-idx">03</span>
-            <span class="m-slash">/</span>
-            <strong class="m-name">THE CLAW</strong>
-            <span class="m-bracket">]</span>
-          </button>
-
-          <button class="model-btn" data-model="polish">
-            <span class="m-bracket">[</span>
-            <span class="m-idx">04</span>
-            <span class="m-slash">/</span>
-            <strong class="m-name">THE BOTTLE</strong>
-            <span class="m-bracket">]</span>
-          </button>
-
-          <button class="model-btn" data-model="studio">
-            <span class="m-bracket">[</span>
-            <span class="m-idx">05</span>
-            <span class="m-slash">/</span>
-            <strong class="m-name">THE STUDIO</strong>
-            <span class="m-bracket">]</span>
-          </button>
-        </div>
-
-        <!-- Open Full-Bleed 3D Viewport (Zero Box Borders / Transparent Canvas) -->
-        <div class="stage-open-viewport-wrapper">
-          <div class="stage-canvas-card" id="stageCanvasCard">
-            <canvas id="stageCanvas" aria-label="3D Interactive Viewport"></canvas>
-
-            <!-- Loading Indicator -->
-            <div class="stage-loading-overlay" id="stageLoading">
-              <div class="loading-spinner"></div>
-              <span class="loading-text">SINCRONIZANDO GEOMETRIA 3D...</span>
-            </div>
-
-            <!-- Sleek Minimalist Catalog HUD (Retained IDs for tests; polygon/fps hidden from interface) -->
-            <div class="viewport-hud-top">
-              <div class="hud-item hud-model-name" id="hudModelName">THE UZI DIAMOND</div>
-              <div class="hud-item hud-stats hud-stats-hidden" aria-hidden="true">
-                <span id="hudPolyCount">POLÍGONOS: ATIVOS</span>
-                <span class="hud-sep">/</span>
-                <span id="hudFps">60 FPS</span>
-              </div>
-            </div>
-
-            <!-- Viewport Controls & Gestures Overlay -->
-            <div class="viewport-hud-bottom">
-              <div class="viewport-controls-group">
-                <button class="vp-ctrl-btn" id="btnAutoRotate" title="Pausar / Retomar Rotação Automática">
-                  <span class="vp-text">AUTO-GIRAR: ON</span>
-                </button>
-                <button class="vp-ctrl-btn" id="btnResetCamera" title="Resetar Câmera">
-                  <span class="vp-text">RESETAR VISTA</span>
-                </button>
-                <button class="vp-ctrl-btn" id="btnToggleFullscreen" title="Tela Cheia">
-                  <span class="vp-text">TELA CHEIA</span>
-                </button>
-              </div>
-              <div class="viewport-gesture-hint">
-                <span>🖱️ Arraste para orbitar • Scroll para aproximar • Botão direito para mover</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Open Interactive Studio Lighting & Material Controls Row -->
-        <div class="stage-controls-bar">
-          <!-- Lighting Presets (Open Typographic Selector) -->
-          <div class="stage-ctrl-column">
-            <span class="ctrl-section-label">SIMULADOR DE ILUMINAÇÃO DE ESTÚDIO:</span>
-            <div class="lighting-presets-list">
-              <button class="light-btn active" data-light="warm-gold">
-                <span class="light-bracket">[</span>
-                <span class="light-name">AMBER GOLD</span>
-                <span class="light-temp">3200K</span>
-                <span class="light-bracket">]</span>
-              </button>
-
-              <button class="light-btn" data-light="cyber-chrome">
-                <span class="light-bracket">[</span>
-                <span class="light-name">CHROME RIM</span>
-                <span class="light-temp">5600K</span>
-                <span class="light-bracket">]</span>
-              </button>
-
-              <button class="light-btn" data-light="purple-haze">
-                <span class="light-bracket">[</span>
-                <span class="light-name">NEON HAZE</span>
-                <span class="light-temp">400nm</span>
-                <span class="light-bracket">]</span>
-              </button>
-
-              <button class="light-btn" data-light="dark-lowkey">
-                <span class="light-bracket">[</span>
-                <span class="light-name">DARK LOW-KEY</span>
-                <span class="light-temp">SNOOT</span>
-                <span class="light-bracket">]</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Materials & Intensity Controls -->
-          <div class="stage-ctrl-column">
-            <span class="ctrl-section-label">ACABAMENTO DO MATERIAL (SHADERS):</span>
-            <div class="material-toggles">
-              <button class="mat-chip active" data-mat="chrome">[ LIQUID CHROME ]</button>
-              <button class="mat-chip" data-mat="gold">[ 18K GROOVY GOLD ]</button>
-              <button class="mat-chip" data-mat="ruby">[ BORDEAUX GLASS ]</button>
-              <button class="mat-chip" data-mat="wireframe">[ WIREFRAME ]</button>
-            </div>
-
-            <!-- Light Intensity Slider -->
-            <div class="light-intensity-control">
-              <div class="slider-label-row">
-                <span>INTENSIDADE DA LUZ PRINCIPAL</span>
-                <span id="lightIntensityVal">1.2x</span>
-              </div>
-              <input type="range" id="lightIntensitySlider" min="0.2" max="3.0" step="0.1" value="1.2" class="gold-range" title="Intensidade">
-            </div>
-
-            <!-- Photographer's Tip -->
-            <div class="director-tip-box">
-              <span class="tip-header">📸 DICA DO FOTÓGRAFO:</span>
-              <p class="tip-text" id="directorTipText">
-                "Para realçar unhas cromadas espelhadas, posicione a fonte de luz atrás ou lateralmente à modelo. A reflexão precisa captar o contraste preto/branco do ambiente."
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         SECTION 04: POSES & CAMERA FRAMING GUIDE (OPEN EDITORIAL LOOKBOOK)
+         SECTION 03: POSES & CAMERA FRAMING GUIDE (OPEN EDITORIAL LOOKBOOK)
          ==================================================================== -->
     <section class="poses-section" id="poses">
       <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
