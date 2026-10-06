@@ -1197,7 +1197,7 @@ section {
 .setups-filter-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px 16px;
   margin-bottom: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 18px;
@@ -1207,13 +1207,17 @@ section {
   background: transparent;
   border: none;
   color: var(--text-muted);
-  padding: 8px 14px;
+  padding: 8px 14px 10px 14px;
   font-family: var(--font-mono);
   font-size: 0.74rem;
   letter-spacing: 0.14em;
   cursor: pointer;
   position: relative;
   transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 .filter-btn:hover {
@@ -1229,12 +1233,13 @@ section {
 .filter-btn.active::after {
   content: '';
   position: absolute;
-  bottom: -19px;
-  left: 0;
-  width: 100%;
+  bottom: calc(50% - 11px);
+  left: 8px;
+  right: 8px;
   height: 2px;
   background: var(--gold-primary);
-  box-shadow: 0 0 10px var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary), 0 0 16px rgba(212, 175, 55, 0.45);
+  border-radius: 2px;
 }
 
 /* Spreads Container */
@@ -1315,6 +1320,8 @@ section {
 .photo-frame-wrap {
   position: relative;
   width: 100%;
+  min-height: 200px;
+  background: #110e17;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
 }
@@ -1439,32 +1446,42 @@ section {
 
 .tape-strip {
   position: absolute;
-  width: 100px;
+  width: 96px;
   height: 26px;
-  background: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(245, 238, 220, 0.2) 100%);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  z-index: var(--z-collage);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-left: 2px dashed rgba(255, 255, 255, 0.45);
+  border-right: 2px dashed rgba(255, 255, 255, 0.45);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  z-index: 10;
   pointer-events: none;
+  border-radius: 1px;
 }
 
 .tape-top-left {
-  top: -12px;
+  top: -10px;
   left: 14px;
-  transform: rotate(-12deg);
+  transform: rotate(-10deg);
 }
 
 .tape-top-right {
-  top: -12px;
+  top: -10px;
   right: 14px;
-  transform: rotate(14deg);
+  transform: rotate(12deg);
 }
 
 .tape-bottom-right {
-  bottom: 8px;
-  right: 12px;
+  bottom: 12px;
+  right: 14px;
   transform: rotate(-8deg);
+}
+
+.tape-bottom-left {
+  bottom: 12px;
+  left: 14px;
+  transform: rotate(8deg);
 }
 
 /* Rotating Gold Seal Badge */
@@ -1530,6 +1547,11 @@ section {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 60px;
   align-items: center;
+}
+
+.centerpiece-media-wrap {
+  position: relative;
+  width: 100%;
 }
 
 .centerpiece-media-wrap .photo-frame-wrap {
@@ -2724,8 +2746,41 @@ section {
   .tilted-left {
     transform: none !important;
   }
+  .setups-editorial-spreads {
+    gap: 60px;
+  }
+  .spread-header-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+  }
   .tape-strip {
-    display: none;
+    display: block !important;
+    width: 76px;
+    height: 22px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  .tape-top-left {
+    top: -8px;
+    left: 10px;
+    transform: rotate(-7deg);
+  }
+  .tape-top-right {
+    top: -8px;
+    right: 10px;
+    transform: rotate(8deg);
+  }
+  .tape-bottom-right {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(-6deg);
+  }
+  .tape-bottom-left {
+    bottom: 10px;
+    left: 10px;
+    transform: rotate(6deg);
   }
   .cassette-window {
     height: 110px;
@@ -2889,19 +2944,38 @@ section {
   .pillar-title {
     font-size: 1.3rem;
   }
-  .setups-filter-bar {
-    gap: 6px;
-    margin-bottom: 28px;
+  .setups-editorial-spreads {
+    gap: 44px;
   }
-  .filter-pill {
-    padding: 6px 12px;
-    font-size: 0.68rem;
+  .setups-filter-bar {
+    gap: 12px 10px;
+    margin-bottom: 32px;
+    padding-bottom: 14px;
+  }
+  .filter-btn {
+    padding: 7px 10px 9px 10px;
+    font-size: 0.70rem;
+    letter-spacing: 0.1em;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+  }
+  .filter-btn.active::after {
+    bottom: calc(50% - 10px);
+    left: 6px;
+    right: 6px;
   }
   .spread-header-strip {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
     margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  .centerpiece-media-wrap .photo-frame-wrap {
+    aspect-ratio: 1 / 1;
   }
   .spread-title-label {
     font-size: 1.05rem;
@@ -3035,6 +3109,21 @@ section {
   section {
     padding: 56px 12px;
   }
+  .setups-editorial-spreads {
+    gap: 36px;
+  }
+  .tape-strip {
+    width: 66px;
+    height: 20px;
+  }
+  .tape-top-left {
+    top: -7px;
+    left: 8px;
+  }
+  .tape-top-right {
+    top: -7px;
+    right: 8px;
+  }
   .hero-section {
     padding: 28px 12px 50px;
   }
@@ -3103,15 +3192,15 @@ section {
   }
   button,
   a,
-  .filter-pill,
+  .filter-btn,
   .check-item {
     -webkit-tap-highlight-color: transparent;
   }
   .btn,
-  .filter-pill,
+  .filter-btn,
   .aside-nav-btn,
   .mobile-nav-link {
-    min-height: 44px;
+    min-height: 40px;
   }
   .photo-hover-veil {
     opacity: 0.45;

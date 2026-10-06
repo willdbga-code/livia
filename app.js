@@ -208,6 +208,7 @@ const shootPhotosData = [
 function initSetupsFilterAndLightbox() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.setup-card');
+  const spreads = document.querySelectorAll('.editorial-spread');
 
   // Filter Buttons
   filterBtns.forEach(btn => {
@@ -216,19 +217,20 @@ function initSetupsFilterAndLightbox() {
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.setup === filter) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 20);
+      spreads.forEach(spread => {
+        const group = spread.dataset.setupGroup;
+        const matches = (filter === 'all' || group === filter);
+        if (matches) {
+          spread.style.display = '';
+          spread.style.opacity = '';
+          const spreadCards = spread.querySelectorAll('.setup-card');
+          spreadCards.forEach(card => {
+            card.style.display = '';
+            card.style.opacity = '';
+            card.style.transform = '';
+          });
         } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
+          spread.style.display = 'none';
         }
       });
     });
