@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>LÍVIA BARBOSA • The Groovy Hip-Hop Shoot | Creative Direction & Moodboard</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Direção Criativa e Moodboard Digital Awwwards para o Ensaio Fotográfico da Nail Designer Lívia Barbosa. Estética Hip-Hop Groovy, Alta Costura e Assets 3D Interativos.">
+  <meta name="keywords" content="Lívia Barbosa Nails, Moodboard, Direção Criativa, Hip-Hop Groovy, Nail Design, Alta Costura, Pindamonhangaba">
+  <meta name="theme-color" content="#08070a">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+
+  <!-- Google Fonts: Syne, Space Grotesk, Italiana, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Import Maps for Three.js ES Modules -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body class="theme-dark awwwards-viewport">
+  <!-- LAYER 0: ATMOSPHERIC ANALOG BASE (Z-INDEX: 0) -->
+  <div class="ambient-glow glow-gold" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bordeaux" aria-hidden="true"></div>
+  <div class="ambient-glow glow-purple" aria-hidden="true"></div>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- LAYER 10: FOREGROUND HUD (Z-INDEX: 10) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-label" id="cursorLabel" aria-hidden="true"></div>
+
+  <!-- Top Editorial Ticker Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <span class="pulse-indicator"></span>
+      <span class="announcement-text">DIREÇÃO CRIATIVA OFICIAL • ENSAIO FOTOGRÁFICO LÍVIA BARBOSA • PINDA / SP 2026 • ESTÉTICA HIP-HOP GROOVY COUTURE</span>
+      <span class="announcement-sep">•</span>
+      <span class="announcement-badge">MAKTUB</span>
+      <span class="announcement-sep">•</span>
+      <span class="announcement-text">ART EM CADA DETALHE</span>
+      <span class="announcement-sep">•</span>
+      <span class="announcement-text">ZERO BOXES • FULL-BLEED 3D • HIGH FASHION EDITORIAL</span>
+    </div>
+  </div>
+
+  <!-- Navigation Header (Floating Minimalist Monogram & Links) -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Lívia Barbosa Nails Home">
+        <span class="brand-monogram">LB</span>
+        <div class="brand-meta">
+          <span class="brand-name">LÍVIA BARBOSA</span>
+          <span class="brand-tag">NAIL ART COUTURE</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação Principal">
+        <a href="#manifesto" class="nav-link">Manifesto</a>
+        <a href="#setups" class="nav-link">Os 5 Setups</a>
+        <a href="#stage3d" class="nav-link nav-highlight">
+          <span class="badge-3d">3D</span> Laboratório
+        </a>
+        <a href="#poses" class="nav-link">Poses & Câmera</a>
+        <a href="#nails" class="nav-link">Nail Bible</a>
+        <a href="#styling" class="nav-link">Styling</a>
+        <a href="#tape-deck" class="nav-link">Soundtrack</a>
+        <a href="#checklist" class="nav-link">Checklist</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Floating Live Audio Bar -->
+        <button class="audio-quick-toggle" id="headerAudioBtn" title="Tocar Beats do Set (Web Audio)">
+          <span class="audio-wave">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="audio-status-text">SET BEATS</span>
+        </button>
+
+        <!-- PDF Dossier Action -->
+        <button class="btn-print-dossier" id="printDossierBtn" title="Imprimir / Salvar Dossiê em PDF">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span class="print-label">Dossiê</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="mobile-nav">
+        <a href="#manifesto" class="mobile-nav-link">01. Manifesto Editorial</a>
+        <a href="#setups" class="mobile-nav-link">02. Os 5 Setups Fotográficos</a>
+        <a href="#stage3d" class="mobile-nav-link">03. 3D Stage & Luzes</a>
+        <a href="#poses" class="mobile-nav-link">04. Guia de Poses & Câmera</a>
+        <a href="#nails" class="mobile-nav-link">05. A Bíblia das Unhas</a>
+        <a href="#styling" class="mobile-nav-link">06. Cabelo, Make & Joias</a>
+        <a href="#tape-deck" class="mobile-nav-link">07. Groovy Tape Deck (Beats)</a>
+        <a href="#checklist" class="mobile-nav-link">08. Checklist do Shoot</a>
+        <a href="https://www.instagram.com/liviabarbosanails/" target="_blank" rel="noopener" class="mobile-nav-link instagram-highlight">@liviabarbosanails</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- ====================================================================
+         HERO SECTION: FULL-BLEED 3D & TYPOGRAPHIC INTERTWINE
+         ==================================================================== -->
+    <section class="hero-section" id="hero">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK (Z-INDEX: 1) -->
+      <div class="kinetic-watermark wm-hero" aria-hidden="true">LÍVIA BARBOSA • GROOVY COUTURE</div>
+
+      <div class="hero-container">
+        <!-- Editorial Micro-Kicker -->
+        <div class="hero-kicker-strip">
+          <span class="micro-badge"><span class="chip-dot"></span> DIRETRIZ CRIATIVA OFICIAL</span>
+          <span class="kicker-sep">/</span>
+          <span class="micro-meta">PINDA • SÃO PAULO</span>
+          <span class="kicker-sep">/</span>
+          <span class="micro-meta gold-text">EDITION 2026 // MAKTUB</span>
+        </div>
+
+        <div class="hero-interactive-stage">
+          <!-- Left/Foreground Monumental Typography (Z-INDEX: 3) -->
+          <div class="hero-content-layer">
+            <h1 class="hero-title">
+              <span class="title-line title-name">LÍVIA BARBOSA</span>
+              <span class="title-line title-groovy-wrap">
+                THE <span class="gradient-gold-text">GROOVY</span>
+              </span>
+              <span class="title-line title-shoot-wrap">
+                <span class="gradient-chrome-text">HIP-HOP</span> SHOOT
+              </span>
+            </h1>
+
+            <p class="hero-statement">
+              A união explosiva entre a atitude monumental do rap dos anos 90, o balanço magnético do groove e a precisão microscópica da alta-costura em unhas. Um ensaio fotográfico para eternizar a artista e sua assinatura: <em>“Art em cada detalhe!”</em>
+            </p>
+
+            <!-- Open Specification Bar (Zero Box/Card containers) -->
+            <div class="hero-open-specs">
+              <div class="spec-block">
+                <span class="spec-label">PROTAGONISTA</span>
+                <strong class="spec-value">Lívia Barbosa</strong>
+                <span class="spec-detail">Master Nail Designer</span>
+              </div>
+              <div class="spec-sep"></div>
+              <div class="spec-block">
+                <span class="spec-label">ESTÉTICA CHAVE</span>
+                <strong class="spec-value">Groovy x Hip-Hop</strong>
+                <span class="spec-detail">Ouro 18K • Cromo • Vinil</span>
+              </div>
+              <div class="spec-sep"></div>
+              <div class="spec-block">
+                <span class="spec-label">SETUPS REAIS</span>
+                <strong class="spec-value">05 Conceitos</strong>
+                <span class="spec-detail">09 Fotos de Referência</span>
+              </div>
+              <div class="spec-sep"></div>
+              <div class="spec-block">
+                <span class="spec-label">ASSETS 3D</span>
+                <strong class="spec-value">Interactive WebGL</strong>
+                <span class="spec-detail">Uzi Diamond, Claws & Props</span>
+              </div>
+            </div>
+
+            <!-- Open Minimal CTAs -->
+            <div class="hero-cta-row">
+              <a href="#setups" class="btn btn-primary">
+                <span>EXPLORAR OS SETUPS</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#stage3d" class="btn btn-ghost-gold">
+                <span class="dot-3d-pulse"></span>
+                <span>ABRIR 3D STAGE</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- LAYER 2: INTEGRATED 3D WEBGL DIAMOND (Z-INDEX: 2) -->
+          <div class="hero-webgl-layer" id="heroDiamondWrapper">
+            <canvas id="heroDiamondCanvas" aria-label="3D Lil Uzi Diamond Interactive"></canvas>
+            
+            <!-- Open Floating Annotation -->
+            <div class="floating-spec-tag">
+              <span class="tag-glyph">💎</span>
+              <div class="tag-meta">
+                <strong>THE UZI DIAMOND</strong>
+                <span>BLING SUPREMO 3D INTERATIVO • ARRASTE / ZOOM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Invite Bar -->
+        <div class="hero-scroll-invite">
+          <a href="#manifesto" class="scroll-link" aria-label="Rolar para o Manifesto">
+            <span class="scroll-label">DESCUBRA A ALQUIMIA EDITORIAL</span>
+            <span class="scroll-line"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 01: MANIFESTO & THE THREE PILLARS (OPEN LUXURY EDITORIAL)
+         ==================================================================== -->
+    <section class="manifesto-section" id="manifesto">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-manifesto" aria-hidden="true">MAKTUB • VISION • COUTURE</div>
+
+      <div class="section-container">
+        <div class="section-lead-header">
+          <span class="section-kicker">01 // VISÃO DE DIREÇÃO DE ARTE</span>
+          <h2 class="section-title">A Alquimia entre o Beat & a Alta Costura</h2>
+        </div>
+
+        <!-- Open Monumental Quote (No Box/Card Background) -->
+        <div class="manifesto-monumental-quote">
+          <div class="quote-symbol" aria-hidden="true">“</div>
+          <blockquote class="quote-text">
+            Nossas mãos contam a nossa história, guardam nossa energia e manifestam nossos sonhos. No hip-hop, o anel pesado e o cromo são armaduras de ouro; na mesa de nail design, cada curvatura e cada ponto de luz são obras de arte esculpidas sob medida. Maktub — estava escrito.
+          </blockquote>
+          <div class="quote-signature-row">
+            <div class="sig-monogram">LB</div>
+            <div class="sig-info">
+              <strong class="sig-name">Lívia Barbosa</strong>
+              <span class="sig-title">Master Nail Designer • Pindamonhangaba</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 3 Pillars (Open Vertical Hairline Columns) -->
+        <div class="pillars-editorial-row">
+          <div class="pillar-column">
+            <div class="pillar-top-meta">
+              <span class="pillar-num">01</span>
+              <span class="pillar-symbol">👑</span>
+            </div>
+            <h3 class="pillar-title">Atitude: Street Royalty</h3>
+            <p class="pillar-desc">
+              Tranças longas com baby hairs milimétricos, regatas caneladas vintage, calças baggy de serigrafia e um olhar sereno de quem comanda o próprio império. A postura é firme, majestosa e inegociável.
+            </p>
+            <div class="pillar-micro-tags">
+              <span>#BoxBraids</span><span>#Streetwear</span><span>#PowerStance</span>
+            </div>
+          </div>
+
+          <div class="pillar-column">
+            <div class="pillar-top-meta">
+              <span class="pillar-num">02</span>
+              <span class="pillar-symbol">⚡</span>
+            </div>
+            <h3 class="pillar-title">Precisão: Nail Couture</h3>
+            <p class="pillar-desc">
+              Cromo prata líquido hiper-reflexivo, relevos dourados 3D com aspecto de ouro derretido, linhas de chamas e estampas bandana feitas à mão livre. O foco macro revela a simetria perfeita da curvatura C.
+            </p>
+            <div class="pillar-micro-tags">
+              <span>#LiquidChrome</span><span>#Ouro3D</span><span>#StilettoClaws</span>
+            </div>
+          </div>
+
+          <div class="pillar-column">
+            <div class="pillar-top-meta">
+              <span class="pillar-num">03</span>
+              <span class="pillar-symbol">🎷</span>
+            </div>
+            <h3 class="pillar-title">Groove: Elegância Sensual</h3>
+            <p class="pillar-desc">
+              Veludo bordô profundo, iluminação âmbar calorosa inspirada nas capas de vinil dos anos 70/90, gloss labial com contorno marrom e curvas orgânicas nas joias. Uma vibe envolvente que hipnotiza.
+            </p>
+            <div class="pillar-micro-tags">
+              <span>#BordeauxVelvet</span><span>#90sBrownLips</span><span>#WarmLight</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 02: THE 5 SHOOT SETUPS (INTELLIGENT BROKEN EDITORIAL GRID)
+         ==================================================================== -->
+    <section class="setups-section" id="setups">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-setups" aria-hidden="true">THE 5 SETUPS • 9 REFERENCE SHOTS</div>
+
+      <div class="section-container">
+        <div class="section-lead-header">
+          <span class="section-kicker">02 // O MAPA DE PRODUÇÃO DO ENSAIO</span>
+          <h2 class="section-title">Os 5 Setups Fotográficos Oficiais</h2>
+          <p class="section-subtitle">
+            Diagramação assimétrica de alta-costura com as 9 fotos de referência reais. Clique em qualquer foto para abrir a análise técnica no Lightbox de alta definição.
+          </p>
+        </div>
+
+        <!-- Open Filter Controls Bar (Typographic tabs) -->
+        <div class="setups-filter-bar" role="tablist">
+          <button class="filter-btn active" data-filter="all">[ ALL // 09 SHOTS ]</button>
+          <button class="filter-btn" data-filter="setup-1">[ 01 // THE BLOCK QUEEN ]</button>
+          <button class="filter-btn" data-filter="setup-2">[ 02 // CYBER & FLAME ]</button>
+          <button class="filter-btn" data-filter="setup-3">[ 03 // LIQUID SILVER CLAWS ]</button>
+          <button class="filter-btn" data-filter="setup-4">[ 04 // VELVET & GOLD ]</button>
+          <button class="filter-btn" data-filter="setup-5">[ 05 // THE ARTIST'S CRAFT ]</button>
+        </div>
+
+        <!-- Intelligent Broken Grid (Z-INDEX: 3 with collage elements at Z-INDEX: 4) -->
+        <div class="setups-editorial-spreads" id="setupsGrid">
+          
+          <!-- ==============================================================
+               SPREAD 01: THE BLOCK QUEEN (Street & Graffiti)
+               ============================================================== -->
+          <div class="editorial-spread spread-street" data-setup-group="setup-1">
+            <div class="spread-header-strip">
+              <span class="spread-index">01 // STREET ATITUDE</span>
+              <span class="spread-title-label">THE BLOCK QUEEN • GRAFF & SOUL</span>
+            </div>
+
+            <div class="spread-overlap-composition">
+              <!-- Photo 01 (Dominant Hero Frame) -->
+              <article class="setup-card spread-item-hero" data-setup="setup-1" data-index="0">
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.45.jpeg" alt="Setup 01 - The Block Queen: Modelo sentada em cubo branco com fundo grafitado, tranças e unhas bandana" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 01</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Plano Médio / Street</span>
+                  <h3 class="caption-title">The Block Queen: Graff & Atitude</h3>
+                  <p class="caption-text">
+                    Cenário com folhas grafitadas em preto fosco, cubo de estúdio branco, regata cinza canelada e jeans baggy. A mão pousada na lateral do rosto exibe unhas azul royal com detalhes em bandana e cromo.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Key Light suave 45° + fill frontal</span>
+                    <span><strong>Nails:</strong> Stiletto Longo • Bandana Paisley</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Photo 02 (Overlapping Tilted Close-up with Tape & Gold Seal) -->
+              <article class="setup-card spread-item-overlap tilted-right" data-setup="setup-1" data-index="1">
+                <!-- Physical Collage Element: Translucent Matte Tape -->
+                <div class="tape-strip tape-top-left" aria-hidden="true"></div>
+                <div class="tape-strip tape-bottom-right" aria-hidden="true"></div>
+
+                <!-- Physical Collage Element: Rotating Gold Seal Badge -->
+                <div class="golden-seal-stamp" aria-hidden="true">
+                  <svg viewBox="0 0 160 160">
+                    <path id="sealPath1" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
+                    <text font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#d4af37" letter-spacing="2.4">
+                      <textPath href="#sealPath1">✦ ART EM CADA DETALHE ✦ LÍVIA BARBOSA ✦ MAKTUB</textPath>
+                    </text>
+                  </svg>
+                  <span class="seal-inner-icon">💎</span>
+                </div>
+
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.45 (2).jpeg" alt="Setup 01 - Close-up lateral de perfil, tranças com baby hairs, camiseta suede carvão e lábios contornados" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 01</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Close-up Perfil 3/4</span>
+                  <h3 class="caption-title">Street Silhouette: 90s Beauty</h3>
+                  <p class="caption-text">
+                    Foco na textura das tranças finas finalizadas com pontas onduladas, baby hairs arquitetônicos na têmpora e camiseta oversized de suede carvão. Anel de prata escovada em destaque.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Beauty Dish prateado a 45°</span>
+                    <span><strong>Make:</strong> Lápis marrom + gloss espelhado</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               SPREAD 02: CYBER & FLAME (Purple Haze & High-Key)
+               ============================================================== -->
+          <div class="editorial-spread spread-cyber" data-setup-group="setup-2">
+            <div class="spread-header-strip">
+              <span class="spread-index">02 // CYBER CONTRAST</span>
+              <span class="spread-title-label">CYBER PURPLE HAZE & HIGH-KEY FRAMING</span>
+            </div>
+
+            <div class="spread-overlap-composition reversed">
+              <!-- Photo 03 (Low Angle Tilted Crouch) -->
+              <article class="setup-card spread-item-hero tilted-left" data-setup="setup-2" data-index="2">
+                <div class="tape-strip tape-top-right" aria-hidden="true"></div>
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.45 (1).jpeg" alt="Setup 02 - Fundo roxo elétrico, modelo agachada em pose streetwear exibindo garras com chamas e nervuras cromadas" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 02</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Plano Inteiro / Low Angle</span>
+                  <h3 class="caption-title">Cyber Purple Haze: Stiletto Flames</h3>
+                  <p class="caption-text">
+                    Ciclorama infinito em roxo vibrante. Pose em agachamento dinâmico (power crouch), mão apoiada sob o queixo exibindo garras stiletto pretas com chamas e nervuras cromadas em relevo.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Fundo gelatinado magenta/roxo + rim light</span>
+                    <span><strong>Nails:</strong> Garra Stiletto XXL • Chamas Cibernéticas</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Photo 04 (High-Key Symmetrical Beauty Frame) -->
+              <article class="setup-card spread-item-overlap" data-setup="setup-2" data-index="3">
+                <div class="barcode-archive-tag" aria-hidden="true">
+                  <span class="barcode-bars">|| | |||| | || |||| |</span>
+                  <span class="barcode-text">SHOT #04 // HIGH-KEY ZEBRA</span>
+                </div>
+
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.44.jpeg" alt="Setup 02 - Fundo branco de alta chave, mãos emoldurando o rosto simetricamente, unhas zebra e flores 3D" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 02</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Primeiro Plano / Beauty</span>
+                  <h3 class="caption-title">High-Key Peek-a-Boo: Framing Simétrico</h3>
+                  <p class="caption-text">
+                    Fundo branco estúdio impecável (High-Key). As duas mãos cruzadas na testa criando uma máscara viva. Alongamento coffin com estampa zebra e flores 3D esculturais.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Octabox frontal 120cm difuso</span>
+                    <span><strong>Nails:</strong> Coffin Rosa • Zebra Print • Flores 3D</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               SPREAD 03: LIQUID SILVER CLAWS (Monumental Centerpiece)
+               ============================================================== -->
+          <div class="editorial-spread spread-monumental" data-setup-group="setup-3">
+            <div class="spread-header-strip">
+              <span class="spread-index">03 // THE MASTERPIECE</span>
+              <span class="spread-title-label">LIQUID SILVER CLAWS • O ESPELHO VIVO</span>
+            </div>
+
+            <!-- Single Monumental Centerpiece Spread -->
+            <article class="setup-card spread-item-centerpiece" data-setup="setup-3" data-index="4">
+              <div class="centerpiece-grid">
+                <div class="centerpiece-media-wrap">
+                  <div class="tape-strip tape-top-left" aria-hidden="true"></div>
+                  <div class="photo-frame-wrap">
+                    <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.44 (1).jpeg" alt="Setup 03 - Macro fotográfico de mãos cruzadas em perspectiva com unhas stiletto espelhadas em prata líquida" loading="lazy" class="editorial-img">
+                    <div class="photo-hover-veil">
+                      <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                    </div>
+                    <span class="setup-badge gold-badge">SETUP 03 // HERO MACRO</span>
+                  </div>
+                </div>
+
+                <div class="centerpiece-narrative">
+                  <span class="narrative-kicker">HAUTE JOAILLERIE & ALTA COSTURA</span>
+                  <h3 class="narrative-title">Liquid Silver Claws: O Espelho Vivo</h3>
+                  <p class="narrative-body">
+                    A fotografia mais icônica de unhas do projeto: contraluz potente contra fundo estourado em branco puro. Mãos em geometria triangular aberta; garras stiletto cromadas refletem as lâmpadas de estúdio com anéis orgânicos de metal líquido derretido.
+                  </p>
+
+                  <div class="narrative-specs-box">
+                    <div class="spec-cell">
+                      <span class="cell-label">ESQUEMA DE LUZ</span>
+                      <strong class="cell-val">Backlight potente criando rim light em silhueta total</strong>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="cell-label">NAIL COUTURE</span>
+                      <strong class="cell-val">Stiletto Extremo • Efeito Prata Líquida 100% Espelho</strong>
+                    </div>
+                    <div class="spec-cell">
+                      <span class="cell-label">JOIAS & BLING</span>
+                      <strong class="cell-val">Anéis esculturais em teia metálica derretida</strong>
+                    </div>
+                  </div>
+
+                  <div class="centerpiece-stamp-tag">
+                    <span>✦ ARQUIVO OFICIAL: SHOT_038F_SILVER_CLAWS // 100 MEGAPIXELS</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ==============================================================
+               SPREAD 04: VELVET & GOLD ROYALTY (Bordeaux Luxury Diptych)
+               ============================================================== -->
+          <div class="editorial-spread spread-velvet" data-setup-group="setup-4">
+            <div class="spread-header-strip">
+              <span class="spread-index">04 // BORDEAUX ROYALTY</span>
+              <span class="spread-title-label">VELVET WINE & GOLD ROYALTY • ALTA REALEZA</span>
+            </div>
+
+            <div class="spread-diptych-composition">
+              <!-- Photo 06 (Velvet Wine Profile) -->
+              <article class="setup-card diptych-item" data-setup="setup-4" data-index="5">
+                <div class="tape-strip tape-top-right" aria-hidden="true"></div>
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.44 (2).jpeg" alt="Setup 04 - Fundo bordô acetinado, tranças, modelo com unhas cacau e ouro derretido 3D, anéis pesados de ouro" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 04</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Retrato Editorial / Moda</span>
+                  <h3 class="caption-title">Velvet Wine & Gold: Alta Realeza</h3>
+                  <p class="caption-text">
+                    Fundo bordeaux bordô aveludado profundo. Tranças longas e olhar lateral elegante. Unhas em tom chocolate adornadas com cordões de ouro 3D derretido e joias pesadas em ouro 18K.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Luz quente suave a 3200K (Tungstênio)</span>
+                    <span><strong>Nails:</strong> Coffin Marrom • Cordões de Ouro 3D</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Photo 07 (Dark Low-Key Enigmatic Eyes) -->
+              <article class="setup-card diptych-item tilted-left" data-setup="setup-4" data-index="6">
+                <div class="barcode-archive-tag" aria-hidden="true">
+                  <span class="barcode-bars">|||| || | || |||| |</span>
+                  <span class="barcode-text">LOW-KEY SNOOT // SHOT #07</span>
+                </div>
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.43.jpeg" alt="Setup 04 - Fundo preto low-key, mãos cobrindo a boca com mix de anéis de ouro e unhas com acabamento de luxo" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 04</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Retrato Fechado / Low Key</span>
+                  <h3 class="caption-title">Dark Low-Key: O Olhar Enigmático</h3>
+                  <p class="caption-text">
+                    Cenário escuro dramático onde apenas os olhos da modelo e as mãos cobrindo o terço inferior do rosto captam a iluminação direcional snoot. Anéis hip-hop e unhas com pedrarias.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Snoot / Grid fechado pontual</span>
+                    <span><strong>Nails:</strong> Stiletto • Mix de Pedrarias • Arabescos</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               SPREAD 05: THE ARTIST'S CRAFT (Atelier Props & Precision)
+               ============================================================== -->
+          <div class="editorial-spread spread-craft" data-setup-group="setup-5">
+            <div class="spread-header-strip">
+              <span class="spread-index">05 // ATELIER PRECISION</span>
+              <span class="spread-title-label">THE ARTIST'S CRAFT • PROPS & COUTURE</span>
+            </div>
+
+            <div class="spread-overlap-composition">
+              <!-- Photo 08 (Cyber E-File Hand) -->
+              <article class="setup-card spread-item-hero" data-setup="setup-5" data-index="7">
+                <div class="tape-strip tape-top-left" aria-hidden="true"></div>
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.44 (4).jpeg" alt="Setup 05 - Mãos segurando motor e-file portátil rosa de nail designer como acessório de hip-hop sobre fundo preto" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 05</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Foco em Props & Ferramenta</span>
+                  <h3 class="caption-title">Cyber E-File: A Arma da Nail Artist</h3>
+                  <p class="caption-text">
+                    A ferramenta mais representativa da nail designer — o motor micromotor e-file portátil rosa — ressignificado como rádio comunicador de hip-hop. Francesa bandana vermelha feita à mão.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Luz recortada lateral realçando o cabo espiral</span>
+                    <span><strong>Props:</strong> Motor portátil rosa e caneta de broca</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Photo 09 (The Swatch Fan) -->
+              <article class="setup-card spread-item-overlap tilted-right" data-setup="setup-5" data-index="8">
+                <div class="tape-strip tape-bottom-right" aria-hidden="true"></div>
+                <div class="photo-frame-wrap">
+                  <img src="referencias/WhatsApp Image 2026-09-18 at 15.46.44 (3).jpeg" alt="Setup 05 - Modelo usando o leque de amostras de esmalte cobrindo metade do rosto com corrente cubana dourada" loading="lazy" class="editorial-img">
+                  <div class="photo-hover-veil">
+                    <span class="zoom-indicator">AMPLIAR DETALHES 🔍</span>
+                  </div>
+                  <span class="setup-badge">SETUP 05</span>
+                </div>
+                <div class="photo-editorial-caption">
+                  <span class="caption-tag">Retrato com Prop de Nail Bar</span>
+                  <h3 class="caption-title">The Swatch Fan: O Leque Couture</h3>
+                  <p class="caption-text">
+                    O mostruário de swatches com pontas de unhas usado como um leque de gueixa da alta-costura contemporânea cobrindo metade da face. Colar de elos com fecho T-bar em ouro.
+                  </p>
+                  <div class="caption-specs">
+                    <span><strong>Luz:</strong> Softbox frontal difuso valorizando o colo</span>
+                    <span><strong>Bling:</strong> Corrente T-Bar em ouro amarelo</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 03: 3D INTERACTIVE STAGE (OPEN SCULPTURE GALLERY INSTALLATION)
+         ==================================================================== -->
+    <section class="stage3d-section" id="stage3d">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-stage" aria-hidden="true">THREE.JS • SCULPTURE GALLERY • 3D</div>
+
+      <div class="section-container">
+        
+        <div class="section-lead-header">
+          <div class="stage-tag-badge">
+            <span class="pulse-dot"></span> THREE.JS WEBGL LAB // 03
+          </div>
+          <h2 class="section-title">Laboratório 3D Interativo de Props & Luzes</h2>
+          <p class="section-subtitle">
+            Instalação aberta de galeria: o objeto 3D flutua sem barreiras no espaço. Selecione a escultura e teste a iluminação de estúdio em tempo real.
+          </p>
+        </div>
+
+        <!-- Open Typographic Model Navigation (Gallery Installation Selectors) -->
+        <div class="stage-models-nav" role="tablist" aria-label="Seletor de Esculturas 3D">
+          <button class="model-btn active" data-model="diamond">
+            <span class="m-bracket">[</span>
+            <span class="m-idx">01</span>
+            <span class="m-slash">/</span>
+            <strong class="m-name">THE BLING</strong>
+            <span class="m-bracket">]</span>
+          </button>
+
+          <button class="model-btn" data-model="hand">
+            <span class="m-bracket">[</span>
+            <span class="m-idx">02</span>
+            <span class="m-slash">/</span>
+            <strong class="m-name">THE HAND</strong>
+            <span class="m-bracket">]</span>
+          </button>
+
+          <button class="model-btn" data-model="claw">
+            <span class="m-bracket">[</span>
+            <span class="m-idx">03</span>
+            <span class="m-slash">/</span>
+            <strong class="m-name">THE CLAW</strong>
+            <span class="m-bracket">]</span>
+          </button>
+
+          <button class="model-btn" data-model="polish">
+            <span class="m-bracket">[</span>
+            <span class="m-idx">04</span>
+            <span class="m-slash">/</span>
+            <strong class="m-name">THE BOTTLE</strong>
+            <span class="m-bracket">]</span>
+          </button>
+
+          <button class="model-btn" data-model="studio">
+            <span class="m-bracket">[</span>
+            <span class="m-idx">05</span>
+            <span class="m-slash">/</span>
+            <strong class="m-name">THE STUDIO</strong>
+            <span class="m-bracket">]</span>
+          </button>
+        </div>
+
+        <!-- Open Full-Bleed 3D Viewport (Zero Box Borders / Transparent Canvas) -->
+        <div class="stage-open-viewport-wrapper">
+          <div class="stage-canvas-card" id="stageCanvasCard">
+            <canvas id="stageCanvas" aria-label="3D Interactive Viewport"></canvas>
+
+            <!-- Loading Indicator -->
+            <div class="stage-loading-overlay" id="stageLoading">
+              <div class="loading-spinner"></div>
+              <span class="loading-text">SINCRONIZANDO GEOMETRIA 3D...</span>
+            </div>
+
+            <!-- Sleek Minimalist Catalog HUD (Retained IDs for tests; polygon/fps hidden from interface) -->
+            <div class="viewport-hud-top">
+              <div class="hud-item hud-model-name" id="hudModelName">THE UZI DIAMOND</div>
+              <div class="hud-item hud-stats hud-stats-hidden" aria-hidden="true">
+                <span id="hudPolyCount">POLÍGONOS: ATIVOS</span>
+                <span class="hud-sep">/</span>
+                <span id="hudFps">60 FPS</span>
+              </div>
+            </div>
+
+            <!-- Viewport Controls & Gestures Overlay -->
+            <div class="viewport-hud-bottom">
+              <div class="viewport-controls-group">
+                <button class="vp-ctrl-btn" id="btnAutoRotate" title="Pausar / Retomar Rotação Automática">
+                  <span class="vp-text">AUTO-GIRAR: ON</span>
+                </button>
+                <button class="vp-ctrl-btn" id="btnResetCamera" title="Resetar Câmera">
+                  <span class="vp-text">RESETAR VISTA</span>
+                </button>
+                <button class="vp-ctrl-btn" id="btnToggleFullscreen" title="Tela Cheia">
+                  <span class="vp-text">TELA CHEIA</span>
+                </button>
+              </div>
+              <div class="viewport-gesture-hint">
+                <span>🖱️ Arraste para orbitar • Scroll para aproximar • Botão direito para mover</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Open Interactive Studio Lighting & Material Controls Row -->
+        <div class="stage-controls-bar">
+          <!-- Lighting Presets (Open Typographic Selector) -->
+          <div class="stage-ctrl-column">
+            <span class="ctrl-section-label">SIMULADOR DE ILUMINAÇÃO DE ESTÚDIO:</span>
+            <div class="lighting-presets-list">
+              <button class="light-btn active" data-light="warm-gold">
+                <span class="light-bracket">[</span>
+                <span class="light-name">AMBER GOLD</span>
+                <span class="light-temp">3200K</span>
+                <span class="light-bracket">]</span>
+              </button>
+
+              <button class="light-btn" data-light="cyber-chrome">
+                <span class="light-bracket">[</span>
+                <span class="light-name">CHROME RIM</span>
+                <span class="light-temp">5600K</span>
+                <span class="light-bracket">]</span>
+              </button>
+
+              <button class="light-btn" data-light="purple-haze">
+                <span class="light-bracket">[</span>
+                <span class="light-name">NEON HAZE</span>
+                <span class="light-temp">400nm</span>
+                <span class="light-bracket">]</span>
+              </button>
+
+              <button class="light-btn" data-light="dark-lowkey">
+                <span class="light-bracket">[</span>
+                <span class="light-name">DARK LOW-KEY</span>
+                <span class="light-temp">SNOOT</span>
+                <span class="light-bracket">]</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Materials & Intensity Controls -->
+          <div class="stage-ctrl-column">
+            <span class="ctrl-section-label">ACABAMENTO DO MATERIAL (SHADERS):</span>
+            <div class="material-toggles">
+              <button class="mat-chip active" data-mat="chrome">[ LIQUID CHROME ]</button>
+              <button class="mat-chip" data-mat="gold">[ 18K GROOVY GOLD ]</button>
+              <button class="mat-chip" data-mat="ruby">[ BORDEAUX GLASS ]</button>
+              <button class="mat-chip" data-mat="wireframe">[ WIREFRAME ]</button>
+            </div>
+
+            <!-- Light Intensity Slider -->
+            <div class="light-intensity-control">
+              <div class="slider-label-row">
+                <span>INTENSIDADE DA LUZ PRINCIPAL</span>
+                <span id="lightIntensityVal">1.2x</span>
+              </div>
+              <input type="range" id="lightIntensitySlider" min="0.2" max="3.0" step="0.1" value="1.2" class="gold-range" title="Intensidade">
+            </div>
+
+            <!-- Photographer's Tip -->
+            <div class="director-tip-box">
+              <span class="tip-header">📸 DICA DO FOTÓGRAFO:</span>
+              <p class="tip-text" id="directorTipText">
+                "Para realçar unhas cromadas espelhadas, posicione a fonte de luz atrás ou lateralmente à modelo. A reflexão precisa captar o contraste preto/branco do ambiente."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 04: POSES & CAMERA FRAMING GUIDE (OPEN EDITORIAL LOOKBOOK)
+         ==================================================================== -->
+    <section class="poses-section" id="poses">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-poses" aria-hidden="true">POSES // GEOMETRIA CORPORAL</div>
+
+      <div class="section-container">
+        <div class="section-lead-header">
+          <span class="section-kicker">03 // GEOMETRIA CORPORAL</span>
+          <h2 class="section-title">Guia de Poses & Enquadramentos</h2>
+          <p class="section-subtitle">
+            As quatro posturas corporais e de mãos que garantem o equilíbrio exato entre a atitude hip-hop e o destaque milimétrico do alongamento de unhas.
+          </p>
+        </div>
+
+        <div class="poses-editorial-grid">
+          <!-- Pose 01 -->
+          <div class="pose-card">
+            <div class="pose-watermark-num">01</div>
+            <div class="pose-meta-tag">ENQUADRAMENTO FACIAL SIMÉTRICO</div>
+            <h3 class="pose-title">The Peek-a-Boo Frame</h3>
+            <p class="pose-desc">
+              Mãos espalmadas horizontalmente sobre os olhos ou maçãs do rosto, dedos entreabertos formando uma fresta para o olhar focado na lente. Cria simetria perfeita e coloca as unhas stiletto e os anéis na mesma profundidade focal do rosto.
+            </p>
+            <div class="pose-specs">
+              <div class="pose-spec-item"><strong>Lente:</strong> 85mm f/4.0</div>
+              <div class="pose-spec-item"><strong>Foco:</strong> Cutículas das unhas</div>
+              <div class="pose-spec-item"><strong>Referência:</strong> Foto 04 (Zebra Stiletto)</div>
+            </div>
+          </div>
+
+          <!-- Pose 02 -->
+          <div class="pose-card">
+            <div class="pose-watermark-num">02</div>
+            <div class="pose-meta-tag">AGACHAMENTO COM APOIO NO QUEIXO</div>
+            <h3 class="pose-title">The Street Power Stance</h3>
+            <p class="pose-desc">
+              Modelo em agachamento dinâmico (low squat) com cotovelo apoiado no joelho e dorso da mão servindo de apoio para o queixo. O outro braço fica estendido solto entre as pernas. Transmite imponência de videoclipe de rap.
+            </p>
+            <div class="pose-specs">
+              <div class="pose-spec-item"><strong>Lente:</strong> 35mm f/2.8 (Contra-plongée)</div>
+              <div class="pose-spec-item"><strong>Ângulo:</strong> Câmera baixa / chão</div>
+              <div class="pose-spec-item"><strong>Referência:</strong> Fotos 01 e 03 (Block Queen & Cyber)</div>
+            </div>
+          </div>
+
+          <!-- Pose 03 -->
+          <div class="pose-card">
+            <div class="pose-watermark-num">03</div>
+            <div class="pose-meta-tag">MÃOS CRUZADAS EM VÓRTICE MACRO</div>
+            <h3 class="pose-title">The Geometric Hand Cross</h3>
+            <p class="pose-desc">
+              As duas mãos se entrelaçam no ar sem se tocar totalmente, em níveis diferentes de profundidade, criando linhas diagonais dinâmicas. Ideal para realçar o efeito espelho de esmaltes cromados e anéis esculturais.
+            </p>
+            <div class="pose-specs">
+              <div class="pose-spec-item"><strong>Lente:</strong> 105mm Macro f/5.6</div>
+              <div class="pose-spec-item"><strong>Luz:</strong> Contraluz recortando o metal</div>
+              <div class="pose-spec-item"><strong>Referência:</strong> Foto 05 (Liquid Silver Claws)</div>
+            </div>
+          </div>
+
+          <!-- Pose 04 -->
+          <div class="pose-card">
+            <div class="pose-watermark-num">04</div>
+            <div class="pose-meta-tag">FERRAMENTA COMO OBJETO DE MODA</div>
+            <h3 class="pose-title">The Couture Prop Hold</h3>
+            <p class="pose-desc">
+              Segurar a caneta do motor e-file ou o leque de tips com delicadeza e firmeza simultâneas, tratando a ferramenta profissional de nail design como um acessório de alta-costura (como um frasco Chanel ou joia imperial).
+            </p>
+            <div class="pose-specs">
+              <div class="pose-spec-item"><strong>Lente:</strong> 50mm f/2.0</div>
+              <div class="pose-spec-item"><strong>Composição:</strong> Regra dos terços</div>
+              <div class="pose-spec-item"><strong>Referência:</strong> Fotos 08 e 09 (E-File & Swatches)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 05: NAIL ARTISTRY & MATERIAL BIBLE
+         ==================================================================== -->
+    <section class="nails-section" id="nails">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-nails" aria-hidden="true">NAIL COUTURE // MATERIAIS</div>
+
+      <div class="section-container">
+        <div class="section-lead-header">
+          <span class="section-kicker">04 // CATÁLOGO TÉCNICO DE MATERIAIS</span>
+          <h2 class="section-title">A Bíblia da Nail Couture</h2>
+          <p class="section-subtitle">
+            Os tratamentos químicos, pigmentos e técnicas de curvatura que transformam o alongamento em joalheria para os dedos.
+          </p>
+        </div>
+
+        <div class="materials-editorial-grid">
+          <!-- Material 01: Liquid Chrome -->
+          <div class="material-card chrome-material-card">
+            <div class="material-swatch chrome-swatch">
+              <div class="swatch-shimmer"></div>
+            </div>
+            <div class="material-body">
+              <span class="material-tag">PIGMENTO METÁLICO</span>
+              <h3 class="material-title">Liquid Silver Chrome</h3>
+              <p class="material-desc">
+                Pó cromado de granulação ultrafina friccionado sobre top coat sem goma sob lâmpada UV aquecida. Cria um espelho líquido ininterrupto sem granulação visível em fotos macro de 100 megapixels.
+              </p>
+              <div class="material-recipe">
+                <span>Base: Preto Ônix</span> • <span>Top: No-Wipe Mirror</span> • <span>Finalização: Selante Vidro</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Material 02: Molten Gold 3D -->
+          <div class="material-card gold-material-card">
+            <div class="material-swatch gold-swatch">
+              <div class="swatch-shimmer"></div>
+            </div>
+            <div class="material-body">
+              <span class="material-tag">ESCULTURA COM GEL</span>
+              <h3 class="material-title">Molten Gold Relief 3D</h3>
+              <p class="material-desc">
+                Gel de construção esculpido em cordões orgânicos de relevo tátil imitando ouro 18K derretido em fluxo contínuo. Finalizado com esferas metálicas douradas aplicadas nos ápices da curvatura.
+              </p>
+              <div class="material-recipe">
+                <span>Base: Chocolate Cacau</span> • <span>Relevo: Sculptor Gel 3D</span> • <span>Banho: Ouro Metálico</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Material 03: Paisley Bandana Print -->
+          <div class="material-card bandana-material-card">
+            <div class="material-swatch bandana-swatch">
+              <div class="swatch-shimmer"></div>
+            </div>
+            <div class="material-body">
+              <span class="material-tag">FREEHAND STREET ART</span>
+              <h3 class="material-title">Bandana Paisley & Swirls</h3>
+              <p class="material-desc">
+                Pintura à mão livre com pincel 000 recriando o padrão de lenço bandana tradicional do hip-hop da Costa Oeste. Combinações em azul marinho, vermelho sangue e branco sobre base translúcida nude.
+              </p>
+              <div class="material-recipe">
+                <span>Pincel: Liner 000</span> • <span>Pigmento: Tinta Acrílica Gel</span> • <span>Fundo: Nude Translúcido</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Material 04: Cyber Flame & Stars -->
+          <div class="material-card flame-material-card">
+            <div class="material-swatch flame-swatch">
+              <div class="swatch-shimmer"></div>
+            </div>
+            <div class="material-body">
+              <span class="material-tag">GRAFISMO & AEROGRAFIA</span>
+              <h3 class="material-title">Cyber Flames & Golden Stars</h3>
+              <p class="material-desc">
+                Chamas cibernéticas delineadas em amarelo e branco sobre fundo preto fosco com estrelas de quatro pontas e relevo de cromo nas bordas. A personificação da velocidade e rebeldia urbana dos anos 2000.
+              </p>
+              <div class="material-recipe">
+                <span>Técnica: Aerografia + Fineline</span> • <span>Acabamento: Misto Fosco/Brilho</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 06: BEAUTY, HAIR & STYLING BREAKDOWN
+         ==================================================================== -->
+    <section class="styling-section" id="styling">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-styling" aria-hidden="true">STYLING // 90S HIP-HOP LUXURY</div>
+
+      <div class="section-container">
+        <div class="section-lead-header">
+          <span class="section-kicker">05 // PRODUÇÃO DE MODA & BELEZA</span>
+          <h2 class="section-title">Guia de Cabelo, Make & Joias</h2>
+          <p class="section-subtitle">
+            A harmonia milimétrica entre a trança nagô/box braids, os lábios anos 90 e o arsenal de anéis pesados que vestem as mãos da Lívia.
+          </p>
+        </div>
+
+        <div class="styling-editorial-columns">
+          <!-- Hair Column -->
+          <div class="styling-card">
+            <div class="styling-card-header">
+              <span class="styling-icon">💇‍♀️</span>
+              <h3 class="styling-title">Hair: Braids & Baby Hairs</h3>
+            </div>
+            <ul class="styling-list">
+              <li><strong>Box Braids Longas:</strong> Tranças finas até a cintura com acabamento em pontas crespas/cacheadas soltas para movimento e leveza.</li>
+              <li><strong>Divisão Geométrica:</strong> Quadrados limpos e alinhados no couro cabeludo com brilho de pomada modeladora.</li>
+              <li><strong>Baby Hairs Esculpidos:</strong> Curvas orgânicas desenhadas na testa e têmporas com escovinha e gel de alta fixação.</li>
+              <li><strong>Versatilidade:</strong> Coque alto samurai no meio do ensaio para destacar o pescoço e brincos de argola.</li>
+            </ul>
+          </div>
+
+          <!-- Makeup Column -->
+          <div class="styling-card">
+            <div class="styling-card-header">
+              <span class="styling-icon">💄</span>
+              <h3 class="styling-title">Makeup: 90s Editorial Glam</h3>
+            </div>
+            <ul class="styling-list">
+              <li><strong>Lábios Ombré 90s:</strong> Contorno marcado com lápis marrom escuro (chocolate), centro nude e camada generosa de gloss espelhado.</li>
+              <li><strong>Olhar Felino:</strong> Delineado gatinho afiado e alongado para a têmpora, cílios postiços volumosos em leque.</li>
+              <li><strong>Pele Acetinada:</strong> Cobertura média com viço natural; blush terroso e pontos de iluminação dourada.</li>
+              <li><strong>Pedrarias / Strass:</strong> Ponto de luz prateado abaixo da sobrancelha e strass no nariz para toque hip-hop.</li>
+            </ul>
+          </div>
+
+          <!-- Bling Column -->
+          <div class="styling-card">
+            <div class="styling-card-header">
+              <span class="styling-icon">💍</span>
+              <h3 class="styling-title">Bling: Iced Chains & Chunky Rings</h3>
+            </div>
+            <ul class="styling-list">
+              <li><strong>Arsenal de Anéis:</strong> Mínimo de 3 a 5 anéis por mão. Mescla de anéis sinete, alianças abauladas de ouro derretido e anéis de falange.</li>
+              <li><strong>Anel Personalizado:</strong> Letras e palavras gravadas em relevo (ex: "MAKTUB", "ART").</li>
+              <li><strong>Colares em Camadas:</strong> Colar de pérolas naturais combinado com corrente de elos, crucifixo gótico e corrente cubana T-bar.</li>
+              <li><strong>Braceletes & Relógio:</strong> Bracelete de prata com nó infinito e relógio tanque retangular de aço ou dourado.</li>
+            </ul>
+          </div>
+
+          <!-- Wardrobe Column -->
+          <div class="styling-card">
+            <div class="styling-card-header">
+              <span class="styling-icon">🧥</span>
+              <h3 class="styling-title">Wardrobe: Groovy Streetwear</h3>
+            </div>
+            <ul class="styling-list">
+              <li><strong>Look 01 (Street Classic):</strong> Regata canelada cinza mescla + calça jeans baggy oversized com customização gráfica em serigrafia branca.</li>
+              <li><strong>Look 02 (Suede Minimal):</strong> Camiseta oversized em suede aveludado cor chumbo/carvão (caimento pesado e sofisticado).</li>
+              <li><strong>Look 03 (Haute Elegance):</strong> Top cropped preto estruturado ou body com alças finas sobre fundo bordô.</li>
+              <li><strong>Look 04 (Cyber Parachute):</strong> Calça parachute preta com amarração de cordões e top tubinho com luvas sem dedos opcionais.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 07: GROOVY TAPE DECK (WEB AUDIO BEAT PLAYER)
+         ==================================================================== -->
+    <section class="tape-deck-section" id="tape-deck">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-tape" aria-hidden="true">TAPE DECK // WEB AUDIO // 85 BPM</div>
+
+      <div class="section-container">
+        
+        <div class="section-lead-header">
+          <span class="section-kicker">06 // TRILHA SONORA DO SET DE FOTOS</span>
+          <h2 class="section-title">Groovy Hip-Hop Tape Deck</h2>
+          <p class="section-subtitle">
+            Sintetizador Web Audio API em tempo real: o ritmo ideal para criar a atmosfera groovy e soltar a atitude da modelo no estúdio. Sem arquivos pesados, pura síntese sonora a 60fps.
+          </p>
+        </div>
+
+        <div class="tape-player-open-layout">
+          <!-- Cassette Console (Keeps class .cassette-deck-card for tests, with open luxury styling) -->
+          <div class="cassette-deck-card">
+            
+            <div class="cassette-header">
+              <div class="cassette-brand">LB VINTAGE SOUND SYSTEM</div>
+              <div class="cassette-stereo">STEREO HI-FI • DOLBY GROOVE // 2026</div>
+            </div>
+
+            <!-- Cassette Window with Rotating Reels -->
+            <div class="cassette-window">
+              <div class="cassette-reel reel-left" id="reelLeft">
+                <div class="reel-core"></div>
+                <div class="reel-spokes"></div>
+              </div>
+              <div class="cassette-tape-strip">
+                <span class="tape-label-text" id="tapeTrackTitle">FAIXA 01: PINDA GOLDEN HOUR</span>
+              </div>
+              <div class="cassette-reel reel-right" id="reelRight">
+                <div class="reel-core"></div>
+                <div class="reel-spokes"></div>
+              </div>
+            </div>
+
+            <!-- Real-time Audio Visualizer Canvas -->
+            <div class="audio-visualizer-container">
+              <canvas id="audioVisualizerCanvas" aria-label="Audio Spectrum Visualizer"></canvas>
+            </div>
+
+            <!-- Tape Controls -->
+            <div class="cassette-controls-row">
+              <button class="tape-btn" id="btnPrevTrack" title="Faixa Anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </button>
+
+              <button class="tape-play-btn" id="btnPlayBeat" title="Tocar / Pausar Beat">
+                <span id="playIcon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                <span class="play-btn-label" id="playBtnText">INICIAR BEAT</span>
+              </button>
+
+              <button class="tape-btn" id="btnNextTrack" title="Próxima Faixa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+              </button>
+            </div>
+
+            <!-- Volume & Track Info -->
+            <div class="cassette-footer">
+              <div class="track-selector-group">
+                <label for="trackSelect" class="selector-label">BEAT PRESET:</label>
+                <select id="trackSelect" class="custom-track-select">
+                  <option value="0">01. Pinda Golden Hour (Lo-Fi 85 BPM)</option>
+                  <option value="1">02. Liquid Chrome Boom Bap (Hip-Hop 92 BPM)</option>
+                  <option value="2">03. Velvet Maktub (Groovy Soul 88 BPM)</option>
+                  <option value="3">04. Cypher Studio Vibe (Trap Chill 130 BPM)</option>
+                </select>
+              </div>
+
+              <div class="volume-slider-group">
+                <span class="vol-icon">🔊</span>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.7" class="gold-range" title="Volume">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Set Audio Notes -->
+          <div class="tape-notes-panel">
+            <h3 class="notes-heading">POR QUE O ÁUDIO É CRUCIAL NO ENSAIO:</h3>
+            <p class="notes-body">
+              A cadência do Hip-Hop dita o ritmo das respirações e das mudanças de pose. A modelo não deve congelar: ela deve se mover organicamente entre os tempos 1 e 3 do compasso, permitindo que o fotógrafo capture a transição natural das mãos em movimento contínuo.
+            </p>
+            <div class="playlist-quick-tags">
+              <span class="playlist-tag">#BoomBap90s</span>
+              <span class="playlist-tag">#LoFiBeats</span>
+              <span class="playlist-tag">#GroovySoul</span>
+              <span class="playlist-tag">#NailArtVibes</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 08: SHOOT DAY PRODUCTION CHECKLIST (STUDIO CALL SHEET)
+         ==================================================================== -->
+    <section class="checklist-section" id="checklist">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-checklist" aria-hidden="true">CALL SHEET // PRODUCTION LOGISTICS</div>
+
+      <div class="section-container">
+        <div class="section-lead-header">
+          <span class="section-kicker">07 // PLANEJAMENTO DE LOGÍSTICA</span>
+          <h2 class="section-title">Checklist do Dia do Shoot (Call Sheet)</h2>
+          <p class="section-subtitle">
+            Cada detalhe garantido para uma diária de fotos impecável, sem imprevistos técnicos ou atrasos no cronograma.
+          </p>
+        </div>
+
+        <div class="checklist-wrapper">
+          <!-- Progress Tracker (Open Dial, Zero Box Background) -->
+          <div class="checklist-progress-card">
+            <div class="progress-dial-wrapper">
+              <div class="progress-circle" id="progressCircle">
+                <span class="progress-percent" id="progressPercent">0%</span>
+              </div>
+            </div>
+            <div class="progress-details">
+              <h3 class="progress-title">Status dos Preparativos</h3>
+              <p class="progress-status" id="progressStatusText">Clique nos itens à direita conforme for organizando o material.</p>
+              <button class="btn btn-outline btn-sm" id="btnResetChecklist">LIMPAR MARCAÇÕES</button>
+            </div>
+          </div>
+
+          <!-- Interactive Checklist Items (8 Items with Delicately Ruled Rows) -->
+          <div class="checklist-items-grid">
+            
+            <label class="check-item" data-id="item-1">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Kit de Unhas de Emergência & Cola Rápida</strong>
+                <p>Tips reservas com a mesma curvatura, cola 401/tekbond de alta precisão e lixa 100/180 para ajuste de bordas.</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-2">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Óleo de Cutícula & Pincel de Retoque</strong>
+                <p>Óleo aromático de cutícula para aplicação a cada 15 minutos antes de cada take macro (elimina aspecto ressecado na luz forte).</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-3">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Álcool 70% & Lenços Sem Fiapo (Wipes)</strong>
+                <p>Limpeza imediata de impressões digitais nas unhas cromadas espelhadas e nos anéis metálicos antes dos cliques.</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-4">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Mostruário de Swatches & Motor E-File Rosa</strong>
+                <p>Props higienizados, motor carregado 100% com cabo espiral branco limpo e broca de cerâmica rosa instalada.</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-5">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Estojo de Joias Separado por Tonalidade</strong>
+                <p>Caixa 01 com peças de ouro 18K e latão polido; Caixa 02 com pratas, correntes grossas e anéis derretidos.</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-6">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Steamer Portátil & Guarda-Roupa Passado</strong>
+                <p>Regatas, camisetas oversized e calças baggy sem marcas de dobra; cabides identificados para cada um dos 5 setups.</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-7">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Pomada de Baby Hair & Escovinha Extra</strong>
+                <p>Gel com fixação extra forte para retoque de fios soltos causados pelo calor das lâmpadas contínuas do estúdio.</p>
+              </div>
+            </label>
+
+            <label class="check-item" data-id="item-8">
+              <input type="checkbox" class="check-input">
+              <span class="check-box-custom"></span>
+              <div class="check-content">
+                <strong>Caixa de Som Bluetooth & Playlist Offline</strong>
+                <p>Garantia de trilha sonora tocando sem interrupções de sinal ou Wi-Fi durante todo o período do ensaio.</p>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 09: CREATIVE TEAM & CREDITS (OPEN MONUMENT SIGNATURE)
+         ==================================================================== -->
+    <section class="credits-section" id="credits">
+      <!-- LAYER 1: KINETIC OUTLINE WATERMARK -->
+      <div class="kinetic-watermark wm-credits" aria-hidden="true">LÍVIA BARBOSA NAILS // PINDA 2026</div>
+
+      <div class="section-container">
+        
+        <div class="credits-card">
+          <!-- Physical Collage Element: Rotating Gold Seal Badge -->
+          <div class="golden-seal-stamp large-seal" aria-hidden="true">
+            <svg viewBox="0 0 160 160">
+              <path id="sealPath2" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
+              <text font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#d4af37" letter-spacing="2.4">
+                <textPath href="#sealPath2">✦ ART EM CADA DETALHE ✦ LÍVIA BARBOSA ✦ MAKTUB</textPath>
+              </text>
+            </svg>
+            <span class="seal-inner-icon">💎</span>
+          </div>
+
+          <span class="credits-badge">CRÉDITOS & ASSINATURA EDITORIAL</span>
+          <h2 class="credits-title">LÍVIA BARBOSA NAILS</h2>
+          <p class="credits-tagline">“Art em cada detalhe! Maktub — Estava escrito.”</p>
+          
+          <div class="credits-info-grid">
+            <div class="credit-box">
+              <span class="credit-role">NAIL ARTIST & CRIADORA</span>
+              <strong class="credit-name">Lívia Barbosa</strong>
+              <span class="credit-detail">Alongamento, Banho de Gel, Blindagem & Nail Art de Alta Costura</span>
+            </div>
+            <div class="credit-box">
+              <span class="credit-role">LOCALIZAÇÃO DO ESTÚDIO</span>
+              <strong class="credit-name">Pindamonhangaba — SP</strong>
+              <span class="credit-detail">Vale do Paraíba • Atendimento Exclusivo</span>
+            </div>
+            <div class="credit-box">
+              <span class="credit-role">CONECTE-SE NO INSTAGRAM</span>
+              <a href="https://www.instagram.com/liviabarbosanails/" target="_blank" rel="noopener" class="instagram-link">
+                <span class="insta-icon">📸</span>
+                <span>@liviabarbosanails</span>
+              </a>
+              <span class="credit-detail">Perfil Pessoal: @liviia_barbosa</span>
+            </div>
+          </div>
+
+          <div class="credits-cta-row">
+            <button class="btn btn-primary" onclick="window.print()">
+              <span>EXPORTAR DOSSIÊ IMPRESSO (PDF)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            </button>
+            <a href="https://www.instagram.com/liviabarbosanails/" target="_blank" rel="noopener" class="btn btn-ghost-gold">
+              <span>VISITAR INSTAGRAM DA ARTISTA</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">LÍVIA BARBOSA • NAIL COUTURE</span>
+        <span class="footer-copy">© 2026 Direção Criativa & Moodboard Editorial. Todos os direitos reservados.</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-motto">“Maktub — Estava Escrito.”</span>
+        <a href="#hero" class="back-to-top" aria-label="Voltar ao Topo">
+          <span>TOPO</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       FULLSCREEN LIGHTBOX MODAL (PHOTO ANALYSIS)
+       ==================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Análise da Foto em Alta Definição" hidden>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <!-- Lightbox Header -->
+      <div class="lightbox-header">
+        <div class="lightbox-title-group">
+          <span class="lightbox-badge" id="lbBadge">SETUP 01</span>
+          <h3 class="lightbox-title" id="lbTitle">Título do Setup</h3>
+        </div>
+        <div class="lightbox-actions">
+          <button class="lb-btn" id="lbZoomToggle" title="Alternar Zoom">🔍</button>
+          <button class="lb-btn lb-close" id="lbCloseBtn" aria-label="Fechar Modal">✕</button>
+        </div>
+      </div>
+
+      <!-- Lightbox Body -->
+      <div class="lightbox-body">
+        <div class="lightbox-image-wrap" id="lbImageWrap">
+          <img src="" alt="" id="lbImage" class="lightbox-img">
+        </div>
+        
+        <!-- Technical Breakdown Sidebar -->
+        <aside class="lightbox-meta-aside">
+          <h4 class="aside-heading">ANÁLISE DE DIREÇÃO DE ARTE</h4>
+          <p class="aside-desc" id="lbDesc">Descrição do setup.</p>
+
+          <div class="aside-spec-group">
+            <span class="spec-label">ESQUEMA DE LUZ:</span>
+            <p class="spec-text" id="lbLight">Detalhes de iluminação.</p>
+          </div>
+
+          <div class="aside-spec-group">
+            <span class="spec-label">DESIGN DAS UNHAS:</span>
+            <p class="spec-text" id="lbNails">Detalhes de unhas.</p>
+          </div>
+
+          <div class="aside-spec-group">
+            <span class="spec-label">JOIAS & ACESSÓRIOS:</span>
+            <p class="spec-text" id="lbBling">Detalhes de joias.</p>
+          </div>
+
+          <div class="aside-nav-controls">
+            <button class="aside-nav-btn" id="lbPrevBtn">← FOTO ANTERIOR</button>
+            <span class="aside-nav-counter" id="lbCounter">1 / 9</span>
+            <button class="aside-nav-btn" id="lbNextBtn">PRÓXIMA FOTO →</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="viewer3d.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

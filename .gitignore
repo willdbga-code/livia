@@ -1,0 +1,13 @@
+# Logs & Temp
+.chrome_tmp*
+*.log
+.DS_Store
+Thumbs.db
+
+# Large archive zips (exceeds GitHub 100MB limit and already extracted into assets/)
+*.zip
+assets/**/*.zip
+
+# Node
+node_modules/
+npm-debug.log*
